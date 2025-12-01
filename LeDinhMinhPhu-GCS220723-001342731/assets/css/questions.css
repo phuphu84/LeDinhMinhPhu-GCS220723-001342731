@@ -1,0 +1,204 @@
+* {margin: 0; padding: 0; box-sizing: border-box; }
+
+:root{
+  /* Christmas theme */
+  --bg: #f4f6f8;        /* Subtle Gray - chosen Option C */
+  --surface: #ffffff;
+  --primary: #b22222;   /* deep Christmas red */
+  --primary-600: #8b1717;
+  --accent: #0b6623;    /* pine green */
+  --gold: #ffd700;      /* festive gold */
+  --text: #16211d;      /* dark almost-black for contrast */
+  --muted: #56655e;     /* muted green-gray */
+  --border: #e9efe9;
+  --danger: #b22222;
+}
+
+body {font-family: Arial, Helvetica, Sans-serif; background-color: var(--bg); color: var(--text); font-size: 1.05rem;}
+
+header{display:block; background-color: var(--accent); padding: 28px 0; border-bottom: 4px solid rgba(0,0,0,0.06);}
+#admin{background-color: var(--accent);} 
+h1{font-weight:700; padding: 0.5rem 1rem; color: var(--gold); text-shadow: 1px 1px 0 rgba(0,0,0,0.04); max-width:1000px; margin:0 auto; font-size:2rem}
+
+/* Navigation */
+nav{
+  background-color: var(--primary);
+  display:flex; justify-content:center; align-items:center; height:64px; padding:0 1rem;
+}
+
+nav ul{display:flex; list-style:none; width:100%; max-width:1200px; justify-content:space-between; padding:0; margin:0}
+nav li{flex:1; text-align:center}
+nav a{color: #fff; text-decoration:none; font-weight:700; font-size:1rem; display:block; line-height:64px}
+nav a:hover{opacity:.95; text-decoration:underline}
+
+.content{width:98%; max-width:1400px; margin:28px auto;}
+
+main{
+  overflow:auto;
+  min-height:30vh;
+  background-color:transparent;
+  max-width:1400px;
+  margin:20px auto;
+  padding:20px 0 0;
+}
+
+/* Footer hidden per user request: remove visible footer strip */
+footer{display: none}
+
+p{margin-bottom:1rem}
+
+/* Forms */
+form{overflow:auto; display:block}
+input, label, select, textarea{display:block; width:100%; max-width:22rem; margin-bottom:1rem; padding:0.6rem; border:1px solid var(--border); border-radius:6px}
+label{margin-bottom:0.4rem; color:var(--muted)}
+input[type="submit"]{background:var(--primary); color:#fff; border:none; padding:0.6rem 1rem; border-radius:6px; cursor:pointer; font-weight:600}
+input[type="submit"]:hover{background:var(--accent); color:#fff}
+
+.question-search{
+  display:flex;
+  flex-wrap:wrap;
+  gap:0;
+  align-items:center;
+  background:var(--surface);
+  padding:0.85rem 1.2rem;
+  border:1px solid var(--border);
+  border-radius:10px;
+  margin-bottom:1.5rem;
+  box-shadow:0 4px 12px rgba(28,26,50,0.05);
+}
+
+.question-search label{
+  width:auto;
+  margin:0 0.75rem 0 0;
+  font-weight:600;
+  color:var(--text);
+}
+
+.question-search input{
+  flex:1 1 260px;
+  max-width:360px;
+  margin:0;
+}
+
+.question-search button{
+  padding:0.45rem 0.85rem;
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:normal;
+  font-family:inherit;
+  font-size:0.95rem;
+  margin-left:0.5rem;
+}
+
+.question-search button:hover{
+  background:var(--accent);
+}
+
+.reset-link{
+  display:inline-block;
+  padding:0.45rem 0.85rem;
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:normal;
+  font-size:0.95rem;
+  font-family:inherit;
+  margin-left:0.5rem;
+}
+
+.reset-link:hover{
+  background:var(--accent);
+}
+
+blockquote{margin-bottom:1rem; border-left:4px solid var(--border); padding:0.6rem 1rem; background:rgba(0,0,0,0.01)}
+
+.errors{padding:1rem; border:1px solid var(--danger); background:#fff0f0; color:var(--danger); margin-bottom:1rem}
+
+/* Layout lists */
+.questionlist{display:flex; gap:1.5rem}
+.categories{width:20%; background-color: #2f3742; padding:1rem; list-style:none; border-radius:8px}
+.categories a{color:#fff; text-decoration:none}
+.categories li{margin-bottom:0.6rem}
+.questionlist .questions{flex:1; padding:0.5rem}
+
+.currentpage:before{content:"["}
+.currentpage:after{content:"]"}
+
+/* Question table */
+.question-table{width:100%; border-collapse:collapse; margin:20px 0; background-color:var(--surface); border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(28,26,50,0.06)}
+.question-table th{background:var(--primary); color:#fff; padding:14px; font-weight:700; text-align:center}
+.question-table td{border-top:1px solid var(--border); padding:12px; vertical-align:middle; text-align:center}
+
+.question-image img{width:100px; height:auto; border-radius:6px}
+
+.question-delete input[type="submit"]{
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  padding:0.45rem 0.85rem;
+  border-radius:6px;
+  cursor:pointer;
+  font-family:inherit;
+  font-size:0.95rem;
+  font-weight: normal;
+}
+
+.question-delete input[type="submit"]:hover{background:var(--accent)}
+
+/* Small edit link styled like a compact button */
+.question-edit a{
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.question-edit a:hover{
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Utility */
+.muted{color:var(--muted)}
+
+/* Responsive tweaks */
+@media (max-width:800px){
+  nav ul{padding:0 0.5rem}
+  nav a{font-size:0.95rem}
+  .questionlist{flex-direction:column}
+  .categories{width:100%}
+  .content{width:95%}
+  h1{font-size:1.5rem}
+}
+
+.question-edit a, .question-delete input[type="submit"] {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  margin: 0;
+}
+
+.button-link{
+  display:inline-block;
+  padding:0.55rem 1rem;
+  background:var(--primary);
+  color:#fff;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:700;
+}
+
+.button-link:hover{
+  background:var(--accent);
+}
+
+.question-table td{word-break:break-word;}
